@@ -15,6 +15,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 
+
 </head>
 
 <body>
@@ -73,47 +74,23 @@
         <img src="image/home1.jpg" class="slide">
       </div>
       <div class="image_item">
-        <img src="image/home1.jpg" alt="" class="slide active" onclick="img('image/home1.jpg')">
-        <img src="image/home2.jpg" alt="" class="slide" onclick="img('image/home2.jpg')">
-        <img src="image/home3.jpg" alt="" class="slide" onclick="img('image/home3.jpg')">
-        <img src="image/home4.jpg" alt="" class="slide" onclick="img('image/home4.jpg')">
+        <img src="image/home1.jpg" alt=""  onclick="img('image/home1.jpg')">
+        <img src="image/home2.jpg" alt="" onclick="img('image/home2.jpg')">
+        <img src="image/home3.jpg" alt=""  onclick="img('image/home3.jpg')">
+        <img src="image/home4.jpg" alt=""  onclick="img('image/home4.jpg')">
       </div>
     </div>
   </section>
+
+  <!---------------------------------- changer l'arriere plan --------------------->
+
   <script>
     function img(anything) {
       document.querySelector('.slide').src = anything;
     }
-
-    function change(change) {
-      const line = document.querySelector('.image');
-      line.style.background = change;
-    }
   </script>
-  <section class="book">
-    <div class="container flex">
-      <div class="input grid">
-        <div class="box">
-          <label>Check-in:</label>
-          <input type="date" placeholder="Check-in-Date">
-        </div>
-        <div class="box">
-          <label>Check-out:</label>
-          <input type="date" placeholder="Check-out-Date">
-        </div>
-        <div class="box">
-          <label>Adults:</label> <br>
-          <input type="number" placeholder="0">
-        </div>
-        <div class="box">
-          <label>Children:</label> <br>
-          <input type="number" placeholder="0">
-        </div>
-      </div>
-      <div class="search">
-        <input type="submit" value="SEARCH">
-      </div>
-    </div>
+
+
   </section>
   <section class="about top" id="about">
     <div class="container flex">
@@ -165,14 +142,7 @@
             <i class="fas fa-microphone"></i>
             <span>Conference room</span>
           </div>
-          <div class="box flex">
-            <i class="fas fa-water"></i>
-            <span>Diving & smorking</span>
-          </div>
-          <div class="box flex">
-            <i class="fas fa-umbrella-beach"></i>
-            <span>Private Beach</span>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -234,7 +204,7 @@
           <p> with us you can discover all the kitchen </p>
         </div>
         <div class="accordionWrapper">
-          <div class="accordionItem open">
+          <div class="accordionItem close">
             <h2 class="accordionIHeading">Italian Kitchen</h2>
             <div class="accordionItemContent">
               <p>Italian cuisine has a great variety of different ingredients which are commonly used, ranging from fruits, vegetables, grains, cheeses, meats and fish. In northern Italy, fish (such as cod, or baccalà), potatoes, rice, corn (maize), sausages, pork, and different types of cheese are the most common ingredients.
@@ -271,7 +241,7 @@
     var accHD = document.getElementsByClassName('accordionIHeading');
 
     for (i = 0; i < accHD.length; i++) {
-      accHD[i].addEventListener('click', toggleItem, false);
+      accHD[i].addEventListener('click', toggleItem);
     }
 
     function toggleItem() {
@@ -340,7 +310,7 @@
  
  <script>
     $('.owl-carousel').owlCarousel({
-      loop: true,
+      loop: false,
       margin: 5  ,
       nav: true,
       dots: false,
